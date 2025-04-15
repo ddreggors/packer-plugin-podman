@@ -15,7 +15,20 @@ on:
     tags:
       - 'v*'
 jobs:
+  get-go-version:
+    runs-on: self-hosted
+    outputs:
+      go-version: ${{ steps.get-go-version.outputs.go-version }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: 'Determine Go version'
+        id: get-go-version
+        run: |
+          echo "Found Go $(cat .go-version)"
+          echo "go-version=$(cat .go-version)" >> $GITHUB_OUTPUT
   goreleaser:
+    needs:
+      - get-go-version
     runs-on: self-hosted
     steps:
       - name: Checkout
@@ -25,7 +38,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: 1.16
+          go-version: ${{ needs.get-go-version.outputs.go-version }}
       - name: Describe plugin
         id: plugin_describe
         run: echo "::set-output name=api_version::$(go run . describe | jq -r '.api_version')"
