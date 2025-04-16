@@ -58,5 +58,6 @@ jobs:
           args: release --clean
         env:
           GPG_FINGERPRINT: ${{ secrets.FINGERPRINT }}
+          PASSPHRASE: ${{ secrets.PASSPHRASE }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           API_VERSION: ${{ steps.plugin_describe.outputs.api_version }}
