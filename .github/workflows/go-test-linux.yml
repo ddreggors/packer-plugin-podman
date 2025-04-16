@@ -27,7 +27,7 @@ jobs:
   linux-go-tests:
     needs:
       - get-go-version
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: Linux Go tests
     steps:
       - uses: actions/checkout@v4
