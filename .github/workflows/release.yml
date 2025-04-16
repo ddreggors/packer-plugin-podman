@@ -21,7 +21,7 @@ jobs:
       go-version: ${{ steps.get-go-version.outputs.go-version }}
     steps:
       - uses: actions/checkout@v4
-      - name: 'Determine Go version'
+      - name: 'Determine Go version.'
         id: get-go-version
         run: |
           echo "Found Go $(cat .go-version)"
