@@ -48,6 +48,8 @@ jobs:
         with:
           version: v1.47.3
           only-new-issues: true
+        env:
+          GOROOT: /usr/lib/golang
   check-fmt:
     needs:
       - get-go-version
