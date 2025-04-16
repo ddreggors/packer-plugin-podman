@@ -13,7 +13,7 @@ name: release
 on:
   push:
     tags:
-      - 'v*'
+      - 'v1.0.0'
 jobs:
   get-go-version:
     runs-on: self-hosted
