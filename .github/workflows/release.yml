@@ -1,7 +1,7 @@
 # This GitHub action can publish assets for release when a tag is created.
 # Currently its setup to run on any tag that matches the pattern "v*" (ie. v0.1.0).
 #
-name: release
+name: Build and Release
 on:
   push:
     tags:
@@ -53,7 +53,7 @@ jobs:
         with:
           # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
-          # 'latest', 'nightly', or a semver
+          # 'latest', 'nightly', or a semver (Example: ~> v2)
           version: '~> v2'
           args: release --clean
         env:
