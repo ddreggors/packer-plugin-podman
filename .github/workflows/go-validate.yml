@@ -45,16 +45,11 @@ jobs:
         with:
           go-version: ${{ needs.get-go-version.outputs.go-version }}
           check-latest: true
-      - run: |
-          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b $(go env GOPATH)/bin v2.1.2
-          golangci-lint --version
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v7
         with:
           version: v2.1.2
           only-new-issues: true
-        env:
-          GOROOT: /usr/lib/golang
   check-fmt:
     needs:
       - get-go-version
