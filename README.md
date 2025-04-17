@@ -1,6 +1,6 @@
 # Packer Plugin for Podman
 
-[![Build Status](https://github.com/ddreggors/packer-plugin-podman/workflows/build-and-test/badge.svg)](https://github.com/golangci/golangci-lint-action/actions)
+[![Go Code Validation](https://github.com/ddreggors/packer-plugin-podman/actions/workflows/go-validate.yml/badge.svg)](https://github.com/ddreggors/packer-plugin-podman/actions/workflows/go-validate.yml) [![Build/Release](https://github.com/ddreggors/packer-plugin-podman/actions/workflows/release.yml/badge.svg)](https://github.com/ddreggors/packer-plugin-podman/actions/workflows/release.yml)
 
 This repository contains a Packer Plugin for Podman. It directly takes the source code from
 [github.com/hashicorp/packer-plugin-docker](https://github.com/hashicorp/packer-plugin-docker) and it "remixes" it to
