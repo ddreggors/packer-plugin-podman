@@ -26,7 +26,7 @@ jobs:
   check-mod-tidy:
     needs:
       - get-go-version
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Go Mod Tidy
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
   check-lint:
     needs:
       - get-go-version
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Lint check
     steps:
       - uses: actions/checkout@v4
@@ -54,7 +54,7 @@ jobs:
   check-fmt:
     needs:
       - get-go-version
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Gofmt check
     steps:
       - uses: actions/checkout@v4
@@ -72,7 +72,7 @@ jobs:
   check-generate:
     needs:
       - get-go-version
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     name: Generate check
     steps:
       - uses: actions/checkout@v4
