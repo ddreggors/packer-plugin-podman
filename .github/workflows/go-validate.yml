@@ -47,7 +47,7 @@ jobs:
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v7
         with:
-          version: v2
+          version: v1.2.3
           only-new-issues: true
         env:
           GOROOT: /usr/lib/golang
