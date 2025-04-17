@@ -16,7 +16,7 @@ on:
         required: false
 jobs:
   get-go-version:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     outputs:
       go-version: ${{ steps.get-go-version.outputs.go-version }}
     steps:
@@ -29,7 +29,7 @@ jobs:
   goreleaser:
     needs:
       - get-go-version
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4

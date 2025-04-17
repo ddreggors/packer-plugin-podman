@@ -44,10 +44,11 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: ${{ needs.get-go-version.outputs.go-version }}
+          check-latest: true
       - name: golangci-lint
         uses: golangci/golangci-lint-action@v7
         with:
-          version: v1.2.3
+          version: v2
           only-new-issues: true
         env:
           GOROOT: /usr/lib/golang

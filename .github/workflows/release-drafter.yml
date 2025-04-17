@@ -10,7 +10,7 @@ jobs:
     if: |
       github.event.pull_request.merged &&
       !contains(github.event.pull_request.labels.*.name, 'skip_changelog')
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
